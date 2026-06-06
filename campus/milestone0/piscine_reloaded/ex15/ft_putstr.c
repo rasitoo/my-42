@@ -6,9 +6,11 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:48:54 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 15:51:30 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 15:55:08 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
@@ -16,5 +18,5 @@ void	ft_putstr(char *str)
 
 	n = 0;
 	while (str[n] != '\0' )
-		write(1, &str[n++], 1);
+		ft_putchar(str[n++]);
 }

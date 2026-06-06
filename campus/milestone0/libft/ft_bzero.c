@@ -6,8 +6,22 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:31:31 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:03 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 18:25:21 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned char	*x;
+
+	x = (unsigned char *)s;
+	while (n > 0)
+	{
+		*x = '\0';
+		x++;
+		n--;
+	}
+	return (s);
+}

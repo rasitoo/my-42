@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:25:52 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 17:28:19 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:50:07 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+
+
 
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);

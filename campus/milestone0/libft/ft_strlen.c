@@ -6,8 +6,18 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:32:39 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:41 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:53:04 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	int	len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}

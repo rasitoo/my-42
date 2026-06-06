@@ -6,9 +6,11 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 12:57:20 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 15:29:39 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 15:36:33 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+void	ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {

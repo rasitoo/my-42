@@ -6,8 +6,15 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:31:37 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:07 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:43:10 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
+}

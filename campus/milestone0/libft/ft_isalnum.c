@@ -6,8 +6,15 @@
 /*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:31:34 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:05 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/06 17:44:18 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_isalnum(int c)
+{
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
+}

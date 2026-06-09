@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:32:43 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:45 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:52:24 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:52:25 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

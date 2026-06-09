@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:51:20 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:51:22 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:49:32 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:36 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:44:43 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:44:44 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:51:29 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:51:58 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"

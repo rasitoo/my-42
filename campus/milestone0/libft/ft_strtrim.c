@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:42:02 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:42:04 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:52:41 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:52:43 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

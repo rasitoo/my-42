@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:49:27 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:49:28 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:49:55 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:45 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

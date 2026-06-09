@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:46:09 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:46:10 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:50:44 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:50:46 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

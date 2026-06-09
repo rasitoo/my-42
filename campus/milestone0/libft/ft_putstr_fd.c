@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:45:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:45:31 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:50:50 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:50:52 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:50:05 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:50:06 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:48:56 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:30 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

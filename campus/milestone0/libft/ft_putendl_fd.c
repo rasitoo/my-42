@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:45:53 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:45:56 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:50:38 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:50:40 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:39 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 17:39:03 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:48:30 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:21 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

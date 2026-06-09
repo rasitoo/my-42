@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:34 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 18:00:38 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:48:21 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:18 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

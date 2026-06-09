@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:32:53 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 16:32:55 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:52:52 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:52:54 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

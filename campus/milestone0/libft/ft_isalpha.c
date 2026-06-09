@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:37 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 17:43:10 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:48:25 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:53:20 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rtapiado <rtapiado@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:32:23 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/06 19:12:00 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:50:20 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/09 17:50:21 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

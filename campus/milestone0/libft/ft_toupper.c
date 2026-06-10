@@ -6,8 +6,13 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:53:03 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:53:05 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/09 17:56:26 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		ft_toupper(int c)
+{
+	
+}

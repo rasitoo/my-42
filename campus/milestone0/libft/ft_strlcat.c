@@ -6,8 +6,13 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:51:17 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:51:19 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/09 17:56:29 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	
+}

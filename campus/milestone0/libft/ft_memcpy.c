@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:50:11 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/10 19:13:46 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:03:22 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	unsigned char	*src_buff;
 	unsigned char	*dest_buff;
 
+	
+	if (!dest && !src)
+		return (NULL);
 	src_buff = (unsigned char *)src;
 	dest_buff = (unsigned char *)dest;
 	while (n > 0)

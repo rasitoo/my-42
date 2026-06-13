@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 18:55:56 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/10 19:29:08 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 23:02:05 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	int				i;
 	unsigned int	j;
-	
+
 	i = 0;
 	j = 0;
 	while (src[i])
@@ -63,4 +63,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 // 	return (0);
 // }
-

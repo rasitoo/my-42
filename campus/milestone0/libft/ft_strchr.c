@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:51:01 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/10 18:48:06 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 23:01:34 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	char	*s_buff;
 
-	s_buff = (char	*)s;
+	s_buff = (char *) s;
 	while (*s_buff != c)
 	{
 		if (*s_buff == '\0')

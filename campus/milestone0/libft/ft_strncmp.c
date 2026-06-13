@@ -6,8 +6,13 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:52:24 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:52:25 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:08:42 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	
+}

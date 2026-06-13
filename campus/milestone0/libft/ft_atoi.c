@@ -6,8 +6,13 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:47:34 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:09:50 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		ft_atoi(const char *nptr)
+{
+	
+}

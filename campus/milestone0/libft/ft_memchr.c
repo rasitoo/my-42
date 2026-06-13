@@ -6,8 +6,13 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:49:59 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:50:01 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/13 18:09:01 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	
+}

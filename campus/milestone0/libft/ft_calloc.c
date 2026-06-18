@@ -6,8 +6,14 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:48:18 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:53:16 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/18 18:59:14 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+
+	
+}

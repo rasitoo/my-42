@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/20 19:13:31 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,60 +14,34 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	neg;
-	int	res;
-	int	i;
+	int		neg;
+	long	res;
+	int		idx;
 
+	/* Correction: the parser must skip spaces and handle signs before converting. */
 	neg = 1;
 	res = 0;
-	i = 0;
-	while ((nptr[i] >= 8 && nptr[i] <= 13) || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	idx = 0;
+	while ((nptr[idx] >= 9 && nptr[idx] <= 13) || nptr[idx] == ' ')
+		idx++;
+	if (nptr[idx] == '-' || nptr[idx] == '+')
 	{
-		if (nptr[i] == '-')
-			neg = -neg;
-		i++;
+		if (nptr[idx] == '-')
+			neg = -1;
+		idx++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[idx] >= '0' && nptr[idx] <= '9')
 	{
-		res = 10 * res + (nptr[i] - '0');
-		i++;
+		res = res * 10 + (nptr[idx] - '0');
+		idx++;
 	}
-	return (res * neg);
+	return ((int)(res * neg));
 }
 
-// int	main(void)
-// {
-// 	char	*tests[] = {
-// 		"42",
-// 		"-42",
-// 		"+42",
-// 		"    42",
-// 		"\t\n\v\f\r 42",
-// 		"0042",
-// 		"-0042",
-// 		"+++---++-+-+--++-++++--+-42abc",
-// 		"abc42",
-// 		"",
-// 		"+",
-// 		"-"
-// 	};
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 12)
-// 	{
-// 		printf("Entrada: \"%s\"\n", tests[i]);
-// 		printf("ft_atoi: %d\n", ft_atoi(tests[i]));
-// 		printf("atoi   : %d\n", atoi(tests[i]));
-
-// 		if (ft_atoi(tests[i]) == atoi(tests[i]))
-// 			printf("OK\n\n");
-// 		else
-// 			printf("ERROR\n\n");
-
-// 		i++;
-// 	}
-// 	return (0);
-// }
+#ifdef FT_MAIN
+int	main(void)
+{
+	printf("atoi: %d\n", ft_atoi("-42"));
+	return (0);
+}
+#endif

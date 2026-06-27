@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:50:26 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/09 17:50:27 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/09 17:50:28 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,27 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char	*x;
+	unsigned char	*ptr;
+	size_t			idx;
 
-	x = (unsigned char *)s;
-	while (n > 0)
+	/* Simple idea: fill a memory block with one byte. */
+	ptr = (unsigned char *)s;
+	idx = 0;
+	while (idx < n)
 	{
-		*x = (unsigned char)c;
-		x++;
-		n--;
+		ptr[idx] = (unsigned char)c;
+		idx++;
 	}
 	return (s);
 }
-// int main(void)
-// {
-//     char buffer1[20];
-//     char buffer2[20];
-//     ft_memset(buffer1, 0, 20);
-//     memset(buffer2, 0, 20);
-//     printf("ft_memset: %s | memset: %s\n", buffer1, buffer2);
-//     ft_memset(buffer1, 'A', 10);
-//     memset(buffer2, 'A', 10);
-//     printf("ft_memset: %s | memset: %s\n", buffer1, buffer2);
-//     ft_memset(buffer1 + 5, 'Z' + 256, 5);
-//     memset(buffer2 + 5, 'Z' + 256, 5);
-//     printf("ft_memset: %s | memset: %s\n", buffer1, buffer2);
-//     return (0);
-// }
+
+#ifdef FT_MAIN
+int	main(void)
+{
+	char	str[] = "abc";
+
+	ft_memset(str, 'x', 2);
+	printf("memset: %c %c\n", str[0], str[1]);
+	return (0);
+}
+#endif

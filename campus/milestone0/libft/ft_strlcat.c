@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:51:17 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/13 22:53:15 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,54 +14,31 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	dlen;
-	unsigned int	slen;
-	unsigned int	tofill;
+	size_t	idx;
+	size_t	jdx;
+	size_t	len;
 
-	i = 0;
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	tofill = size - dlen - 1;
-	if (dlen >= size)
-		return (size + slen);
-	while (src[i] != '\0' && tofill--)
+	len = ft_strlen(dst);
+	idx = len;
+	jdx = 0;
+	if (size <= len)
+		return (ft_strlen(src) + size);
+	while (src[jdx] != '\0' && idx + 1 < size)
 	{
-		dst[dlen + i] = src[i];
-		i++;
+		dst[idx] = src[jdx];
+		idx++;
+		jdx++;
 	}
-	dst[dlen + i] = '\0';
-	return (dlen + slen);
+	dst[idx] = '\0';
+	return (len + ft_strlen(src));
 }
 
-// int	main(void)
-// {
-// 	char	buffer[20];
-// 	size_t	ret;
+#ifdef FT_MAIN
+int	main(void)
+{
+	char	dst[6] = "ab";
 
-// 	strcpy(buffer, "Hola");
-// 	ret = ft_strlcat(buffer, " Mundo", sizeof(buffer));
-// 	printf("Caso 1\n");
-// 	printf("buffer = \"%s\"\n", buffer);
-// 	printf("ret    = %zu\n\n", ret);
-
-// 	strcpy(buffer, "Hola");
-// 	ret = ft_strlcat(buffer, " Mundo", 8);
-// 	printf("Caso 2\n");
-// 	printf("buffer = \"%s\"\n", buffer);
-// 	printf("ret    = %zu\n\n", ret);
-
-// 	strcpy(buffer, "Hola");
-// 	ret = ft_strlcat(buffer, " Mundo", 5);
-// 	printf("Caso 3\n");
-// 	printf("buffer = \"%s\"\n", buffer);
-// 	printf("ret    = %zu\n\n", ret);
-
-// 	strcpy(buffer, "Hola");
-// 	ret = ft_strlcat(buffer, " Mundo", 0);
-// 	printf("Caso 4\n");
-// 	printf("buffer = \"%s\"\n", buffer);
-// 	printf("ret    = %zu\n\n", ret);
-
-// 	return (0);
-// }
+	printf("strlcat: %zu\n", ft_strlcat(dst, "cd", 6));
+	return (0);
+}
+#endif

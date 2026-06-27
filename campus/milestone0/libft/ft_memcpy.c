@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:50:11 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/13 23:00:46 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,31 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*src_buff;
-	unsigned char	*dest_buff;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			idx;
 
-	if (!dest && !src)
+	if (dest == NULL && src == NULL)
 		return (NULL);
-	src_buff = (unsigned char *)src;
-	dest_buff = (unsigned char *)dest;
-	while (n > 0)
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	idx = 0;
+	while (idx < n)
 	{
-		*dest_buff = *src_buff;
-		src_buff++;
-		dest_buff++;
-		n--;
+		d[idx] = s[idx];
+		idx++;
 	}
 	return (dest);
 }
 
-// int	main(void)
-// {
-// 	char	src[] = "Hola mundo";
-// 	char	dest1[20];
-// 	char	dest2[20];
+#ifdef FT_MAIN
+int	main(void)
+{
+	char	dst[4];
 
-// 	ft_memcpy(dest1, src, strlen(src) + 1);
-// 	memcpy(dest2, src, strlen(src) + 1);
-
-// 	printf("ft_memcpy: %s\n", dest1);
-// 	printf("memcpy   : %s\n", dest2);
-
-// 	if (memcmp(dest1, dest2, strlen(src) + 1) == 0)
-// 		printf("OK\n");
-// 	else
-// 		printf("ERROR\n");
-
-// 	return (0);
-// }
+	ft_memcpy(dst, "abc", 3);
+	dst[3] = '\0';
+	printf("memcpy: %s\n", dst);
+	return (0);
+}
+#endif

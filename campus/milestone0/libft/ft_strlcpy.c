@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 18:55:56 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/13 23:02:05 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,52 +14,29 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	int				i;
-	unsigned int	j;
+	size_t	idx;
 
-	i = 0;
-	j = 0;
-	while (src[i])
+	idx = 0;
+	if (size > 0)
 	{
-		while (j < size)
+		while (src[idx] != '\0' && idx + 1 < size)
 		{
-			dst[j] = src[j];
-			j++;
+			dst[idx] = src[idx];
+			idx++;
 		}
-		i++;
+		dst[idx] = '\0';
 	}
-	dst[size - 1] = '\0';
-	return (i);
+	while (src[idx] != '\0')
+		idx++;
+	return (idx);
 }
-// int	main(void)
-// {
-// 	char	dst[20];
-// 	size_t	ret;
 
-// 	memset(dst, 'X', sizeof(dst));
+#ifdef FT_MAIN
+int	main(void)
+{
+	char	dst[4];
 
-// 	ret = ft_strlcpy(dst, "Hola mundo", sizeof(dst));
-
-// 	printf("dst: \"%s\"\n", dst);
-// 	printf("ret: %zu\n", ret);
-
-// 	ret = ft_strlcpy(dst, "Hola mundo", 5);
-
-// 	printf("\nsize = 5\n");
-// 	printf("dst: \"%s\"\n", dst);
-// 	printf("ret: %zu\n", ret);
-
-// 	ret = ft_strlcpy(dst, "Hola mundo", 1);
-
-// 	printf("\nsize = 1\n");
-// 	printf("dst: \"%s\"\n", dst);
-// 	printf("ret: %zu\n", ret);
-
-// 	ret = ft_strlcpy(dst, "Hola mundo", 0);
-
-// 	printf("\nsize = 0\n");
-// 	printf("dst: \"%s\"\n", dst);
-// 	printf("ret: %zu\n", ret);
-
-// 	return (0);
-// }
+	printf("strlcpy: %zu\n", ft_strlcpy(dst, "abc", 4));
+	return (0);
+}
+#endif

@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/09 17:50:20 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/13 23:00:09 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,61 +14,43 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*src_buff;
-	unsigned char	*dest_buff;
+	unsigned char	*dst;
+	unsigned char	*srcp;
+	size_t			idx;
 
-	if (!dest && !src)
+	/* Correction: memmove must safely handle overlap, copying backward when needed. */
+	if (dest == NULL && src == NULL)
 		return (NULL);
-	src_buff = (unsigned char *)src;
-	dest_buff = (unsigned char *)dest;
-	if (dest_buff > src_buff)
+	dst = (unsigned char *)dest;
+	srcp = (unsigned char *)src;
+	if (dst > srcp)
 	{
-		while (n > 0)
+		idx = n;
+		while (idx > 0)
 		{
-			n--;
-			dest_buff[n] = src_buff[n];
+			idx--;
+			dst[idx] = srcp[idx];
 		}
 	}
 	else
 	{
-		while (n > 0)
+		idx = 0;
+		while (idx < n)
 		{
-			*dest_buff++ = *src_buff++;
-			n--;
+			dst[idx] = srcp[idx];
+			idx++;
 		}
 	}
 	return (dest);
 }
 
-// int	main(void)
-// {
-// 	char	a1[30] = "abcdefghijkl";
-// 	char	a2[30] = "abcdefghijkl";
+#ifdef FT_MAIN
+int	main(void)
+{
+	char	str[] = "abc";
 
-// 	char	b1[30] = "abcdefghijkl";
-// 	char	b2[30] = "abcdefghijkl";
-
-// 	/* Solapamiento hacia delante */
-// 	ft_memmove(a1 + 3, a1, 8);
-// 	memmove(a2 + 3, a2, 8);
-
-// 	printf("Caso 1:\n");
-// 	printf("ft : %s\n", a1);
-// 	printf("std: %s\n\n", a2);
-
-// 	/* Solapamiento hacia atrás */
-// 	ft_memmove(b1, b1 + 3, 8);
-// 	memmove(b2, b2 + 3, 8);
-
-// 	printf("Caso 2:\n");
-// 	printf("ft : %s\n", b1);
-// 	printf("std: %s\n\n", b2);
-
-// 	if (memcmp(a1, a2, sizeof(a1)) == 0
-// 		&& memcmp(b1, b2, sizeof(b1)) == 0)
-// 		printf("Todos los tests OK\n");
-// 	else
-// 		printf("ERROR\n");
-
-// 	return (0);
-// }
+	ft_memmove(str, str + 1, 2);
+	printf("memmove: %s\n", str);
+	return (0);
+}
+#endif

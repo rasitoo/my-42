@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:52:10 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/13 20:03:53 by rtapiado         ###   ########.fr       */
+/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,18 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	len;
+	size_t	idx;
 
-	len = 0;
-	while (s[len] != '\0')
-		len++;
-	return (len);
+	idx = 0;
+	while (s[idx] != '\0')
+		idx++;
+	return (idx);
 }
 
-// int	main(void)
-// {
-// 	const char	*tests[] = {
-// 		"",
-// 		"a",
-// 		"Hola",
-// 		"Hola mundo",
-// 		"1234567890",
-// 		"42 Madrid"
-// 	};
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 6)
-// 	{
-// 		printf("Cadena: \"%s\"\n", tests[i]);
-// 		printf("ft_strlen: %zu\n", ft_strlen(tests[i]));
-// 		printf("strlen   : %zu\n", strlen(tests[i]));
-
-// 		if (ft_strlen(tests[i]) == strlen(tests[i]))
-// 			printf("OK\n\n");
-// 		else
-// 			printf("ERROR\n\n");
-
-// 		i++;
-// 	}
-// 	return (0);
-// }
+#ifdef FT_MAIN
+int	main(void)
+{
+	printf("strlen: %zu\n", ft_strlen("abc"));
+	return (0);
+}
+#endif

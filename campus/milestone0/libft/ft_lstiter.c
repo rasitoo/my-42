@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 16:24:34 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 16:38:30 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 19:17:50 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	while (lst != NULL)
+	t_list	*temp;
+
+	temp = (t_list *)lst;
+	if (temp && f)
 	{
-		f(lst->content);
-		lst = lst->next;
+		while (temp)
+		{
+			f(temp->content);
+			temp = temp->next;
+		}
 	}
 }

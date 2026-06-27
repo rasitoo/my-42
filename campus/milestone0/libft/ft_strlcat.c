@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:35:13 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:35:16 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[idx] = '\0';
 	return (len + ft_strlen(src));
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	dst[6] = "ab";
-
-	printf("strlcat: %zu\n", ft_strlcat(dst, "cd", 6));
-	return (0);
-}
-#endif

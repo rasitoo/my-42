@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:36:41 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:36:44 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[idx] = '\0';
 	return (sub);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	*res;
-
-	res = ft_substr("abcdef", 2, 3);
-	printf("substr: %s\n", res);
-	free(res);
-	return (0);
-}
-#endif

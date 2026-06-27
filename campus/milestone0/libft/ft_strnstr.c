@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:36:01 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:44:12 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[idx] != '\0' && idx < len)
 	{
 		jdx = 0;
-		while (little[jdx] != '\0' && big[idx + jdx] == little[jdx] \
+		while (little[jdx] != '\0' && big[idx + jdx] == little[jdx]
 			&& idx + jdx < len)
 			jdx++;
 		if (little[jdx] == '\0')
@@ -32,11 +32,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("strnstr: %s\n", ft_strnstr("hello", "ell", 5));
-	return (0);
-}
-#endif

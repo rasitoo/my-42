@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:50:44 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:31:48 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:32:15 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 static void	ft_putnbr_recursive(long n, int fd)
 {
@@ -31,14 +30,5 @@ static void	ft_putnbr_recursive(long n, int fd)
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	/* Simple idea: write an integer to a file descriptor. */
 	ft_putnbr_recursive((long)n, fd);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	ft_putnbr_fd(42, 1);
-	return (0);
-}
-#endif

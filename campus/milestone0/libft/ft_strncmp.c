@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:35:56 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:35:58 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("strncmp: %d\n", ft_strncmp("ab", "ac", 2));
-	return (0);
-}
-#endif

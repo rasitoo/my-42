@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 16:25:52 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 14:45:04 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 16:39:41 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <strings.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

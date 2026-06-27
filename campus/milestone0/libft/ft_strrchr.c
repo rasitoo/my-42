@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:36:10 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:36:16 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[idx]);
 	return (res);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("strrchr: %s\n", ft_strrchr("banana", 'a'));
-	return (0);
-}
-#endif

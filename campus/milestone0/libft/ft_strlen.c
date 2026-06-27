@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:35:36 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:35:39 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ size_t	ft_strlen(const char *s)
 		idx++;
 	return (idx);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("strlen: %zu\n", ft_strlen("abc"));
-	return (0);
-}
-#endif

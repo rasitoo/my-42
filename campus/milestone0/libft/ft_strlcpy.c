@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:35:22 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:35:28 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		idx++;
 	return (idx);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	dst[4];
-
-	printf("strlcpy: %zu\n", ft_strlcpy(dst, "abc", 4));
-	return (0);
-}
-#endif

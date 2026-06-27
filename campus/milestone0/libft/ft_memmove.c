@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:50:20 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:28:55 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:30:32 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*srcp;
 	size_t			idx;
 
-	/* Correction: memmove must safely handle overlap, copying backward when needed. */
 	if (dest == NULL && src == NULL)
 		return (NULL);
 	dst = (unsigned char *)dest;
@@ -26,11 +25,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dst > srcp)
 	{
 		idx = n;
-		while (idx > 0)
-		{
-			idx--;
+		while (idx-- > 0)
 			dst[idx] = srcp[idx];
-		}
 	}
 	else
 	{
@@ -43,14 +39,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	str[] = "abc";
-
-	ft_memmove(str, str + 1, 2);
-	printf("memmove: %s\n", str);
-	return (0);
-}
-#endif

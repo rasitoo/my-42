@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:20:21 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:38:17 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,3 @@ char	*ft_itoa(int n)
 	}
 	return (res);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	*res;
-
-	res = ft_itoa(-42);
-	printf("itoa: %s\n", res);
-	free(res);
-	return (0);
-}
-#endif

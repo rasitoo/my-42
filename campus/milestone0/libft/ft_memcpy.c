@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:28:42 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:28:43 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	dst[4];
-
-	ft_memcpy(dst, "abc", 3);
-	dst[3] = '\0';
-	printf("memcpy: %s\n", dst);
-	return (0);
-}
-#endif

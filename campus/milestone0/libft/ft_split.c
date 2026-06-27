@@ -5,89 +5,109 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:32:37 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:33:41 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_words(char const *s, char c)
+char	*ft_char_in_str(char *s, char c)
 {
-	int	words;
-	int	idx;
-
-	words = 0;
-	idx = 0;
-	while (s[idx] != '\0')
+	while (*s)
 	{
-		if ((idx == 0 || s[idx - 1] == c) && s[idx] != c)
-			words++;
-		idx++;
+		if (*s == c)
+			return (s);
+		s++;
 	}
-	return (words);
+	if (c == '\0')
+		return (s);
+	return (NULL);
 }
 
-static char	*ft_strndup(char const *s, size_t n)
+int	ft_count_words(char *str, char *sep)
 {
-	char	*dup;
-	size_t	idx;
+	int	word;
+	int	count;
 
-	dup = (char *)malloc(sizeof(char) * (n + 1));
-	if (dup == NULL)
-		return (NULL);
-	idx = 0;
-	while (idx < n)
+	count = 0;
+	word = 0;
+	while (*str != '\0')
 	{
-		dup[idx] = s[idx];
-		idx++;
+		if (!ft_char_in_str(sep, *str) && !word)
+		{
+			word = 1;
+			count++;
+		}
+		else
+			if (ft_char_in_str(sep, *str))
+				word = 0;
+		str++;
 	}
-	dup[idx] = '\0';
-	return (dup);
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+char	*ft_get_x_word_pointer(char *str, char *sep, int x)
 {
-	char	**res;
+	int		word;
+	int		count;
+
+	count = 0;
+	word = 0;
+	while (*str != '\0')
+	{
+		if (!ft_char_in_str(sep, *str) && !word)
+		{
+			word = 1;
+			count++;
+			if (count == x)
+				return (str);
+		}
+		else
+			if (ft_char_in_str(sep, *str))
+				word = 0;
+		str++;
+	}
+	return (NULL);
+}
+
+int	ft_get_x_word_length(char *word_start, char *sep)
+{
+	int		found_length;
+
+	found_length = 0;
+	if (!word_start)
+		return (0);
+	while (*word_start && !ft_char_in_str(sep, *word_start))
+	{
+		found_length++;
+		word_start++;
+	}
+	return (found_length);
+}
+
+char	**ft_split(char *str, char *charset)
+{
 	int		words;
-	int		idx;
-	int		jdx;
-	int		start;
+	int		i;
+	int		j;
+	char	**strs;
+	char	*word_ptr;
 
-	if (s == NULL)
-		return (NULL);
-	words = ft_count_words(s, c);
-	res = (char **)malloc(sizeof(char *) * (words + 1));
-	if (res == NULL)
-		return (NULL);
-	idx = 0;
-	jdx = 0;
-	while (s[idx] != '\0')
+	words = ft_count_words(str, charset);
+	strs = malloc(sizeof(char *) * words);
+	i = 0;
+	while (i < words)
 	{
-		while (s[idx] == c)
-			idx++;
-		if (s[idx] == '\0')
-			break ;
-		start = idx;
-		while (s[idx] != '\0' && s[idx] != c)
-			idx++;
-		res[jdx++] = ft_strndup(&s[start], idx - start);
+		word_ptr = ft_get_x_word_pointer(str, charset, i + 1);
+		strs[i] = malloc(ft_get_x_word_length(word_ptr, charset));
+		j = 0;
+		while (j < ft_get_x_word_length(word_ptr, charset))
+		{
+			strs[i][j] = word_ptr[j];
+			j++;
+		}
+		i++;
 	}
-	res[jdx] = NULL;
-	return (res);
+	return (strs);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	char	**parts;
-
-	parts = ft_split("one-two-three", '-');
-	printf("split: %s %s\n", parts[0], parts[2]);
-	free(parts[0]);
-	free(parts[1]);
-	free(parts[2]);
-	free(parts);
-	return (0);
-}
-#endif

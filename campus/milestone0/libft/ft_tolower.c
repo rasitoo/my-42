@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:36:54 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:36:56 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_tolower(int c)
 		return (c + 32);
 	return (c);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("tolower: %c\n", ft_tolower('Z'));
-	return (0);
-}
-#endif

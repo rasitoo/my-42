@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:17:00 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:40:08 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_atoi(const char *nptr)
 	long	res;
 	int		idx;
 
-	/* Correction: the parser must skip spaces and handle signs before converting. */
 	neg = 1;
 	res = 0;
 	idx = 0;
@@ -37,11 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return ((int)(res * neg));
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("atoi: %d\n", ft_atoi("-42"));
-	return (0);
-}
-#endif

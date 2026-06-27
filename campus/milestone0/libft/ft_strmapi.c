@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:35:43 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:35:48 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	res[idx] = '\0';
 	return (res);
 }
-
-#ifdef FT_MAIN
-static char	bump_char(unsigned int i, char c)
-{
-	(void)i;
-	return (c + 1);
-}
-
-int	main(void)
-{
-	char	*res;
-
-	res = ft_strmapi("ab", bump_char);
-	printf("strmapi: %s\n", res);
-	free(res);
-	return (0);
-}
-#endif

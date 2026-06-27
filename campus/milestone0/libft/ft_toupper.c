@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/06 16:31:29 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:37:04 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:37:06 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	printf("toupper: %c\n", ft_toupper('a'));
-	return (0);
-}
-#endif

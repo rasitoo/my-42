@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/09 17:48:56 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 00:00:00 by copilot         ###   ########.fr       */
+/*   Created: 2026/06/27 16:21:20 by rtapiado          #+#    #+#             */
+/*   Updated: 2026/06/27 16:38:20 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*tmp;
 
-	/* Simple idea: append a node at the end of the list. */
 	if (lst == NULL || new == NULL)
 		return ;
 	if (*lst == NULL)
@@ -29,15 +28,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		tmp = tmp->next;
 	tmp->next = new;
 }
-
-#ifdef FT_MAIN
-int	main(void)
-{
-	t_list	*head;
-
-	head = NULL;
-	ft_lstadd_back(&head, ft_lstnew("a"));
-	printf("lstadd_back: %d\n", ft_lstsize(head));
-	return (0);
-}
-#endif

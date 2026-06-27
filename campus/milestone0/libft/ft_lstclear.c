@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 16:23:38 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 16:24:01 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 17:01:33 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
-}
-
-int	main(void)
-{
-	t_list	*head;
-
-	head = ft_lstnew(strdup("x"));
-	ft_lstclear(&head, free);
-	printf("lstclear: %d\n", head == NULL);
-	return (0);
 }

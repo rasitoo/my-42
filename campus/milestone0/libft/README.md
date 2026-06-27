@@ -1,56 +1,90 @@
-# Libft
+*Este proyecto ha sido creado como parte del currículo de 42 por rtapiado.*
 
 ## Descripción
-Libft es una biblioteca personal creada para recrear y comprender funciones básicas de la libc de C. El objetivo del proyecto es implementar funciones de manejo de cadenas, memoria, caracteres y listas enlazadas, respetando las normas de compilación y estilo del campus 42.
 
-## Compilación
-- `make` : compila todos los archivos `.c` y construye la biblioteca `libft.a`
-- `make clean` : borra los archivos objeto `.o`
-- `make fclean` : borra `libft.a` y los archivos objeto
-- `make re` : ejecuta `fclean` y luego `all`
+Este proyecto es una implementación específica del ejercicio `libft` del campus 42. Consiste en desarrollar una biblioteca en C que replica funciones básicas de la libc y añade utilidades propias para manejo de cadenas, memoria, caracteres y listas enlazadas. El objetivo es crear una biblioteca estática `libft.a` que cumpla las normas de 42 y sirva como base reutilizable para futuros proyectos.
 
-## Uso
-1. Incluir la cabecera en el proyecto:
+## Instrucciones
+
+### Compilación
+
+1. Navega al directorio del proyecto:
+   ```bash
+   cd campus/milestone0/libft
+   ```
+2. Compila la biblioteca:
+   ```bash
+   make
+   ```
+3. Usa la biblioteca en tu código:
    ```c
    #include "libft.h"
    ```
-2. Compilar usando la biblioteca:
    ```bash
-   cc -I. main.c -L. -lft
+   cc -Wall -Wextra -Werror -I. main.c -L. -lft
    ```
-3. Asegurarse de que `libft.a` esté en el directorio del proyecto o en el `LD_LIBRARY_PATH`.
 
-## Requisitos del proyecto
+### Limpieza
+
+- `make clean` : elimina los archivos objeto `.o`
+- `make fclean` : elimina `libft.a` y los archivos objeto
+- `make re` : ejecuta `fclean` y luego `all`
+
+### Requisitos del proyecto
+
 - Compilación con `cc -Wall -Wextra -Werror`
-- No usar funciones prohibidas por el subject
-- No usar variables globales
-- Manejar correctamente `NULL` y casos límite
-- Implementar la biblioteca como un archivo estático `libft.a`
+- No se deben usar funciones prohibidas por el subject de 42
+- No se usan variables globales
+- La biblioteca se genera como un archivo estático `libft.a`
 
-## Funciones implementadas
-### Parte obligatoria
+## Recursos
+
+- Subject oficial del proyecto `libft` de 42
+- Documentación de la biblioteca estándar de C (`man`)
+- Recursos sobre manejo de memoria y cadenas en C
+- Artículos y tutoriales sobre listas enlazadas simples en C (CS50x)
+
+### Uso de IA
+
+No se ha utilizado inteligencia artificial para desarrollar el código de esta biblioteca. La documentación y la solución se han elaborado manualmente.
+
+## Detalle de la librería
+
+La librería `libft` creada en este proyecto ofrece una colección de funciones fundamentales en C implementadas desde cero. Está diseñada para:
+
+- manipular cadenas y subcadenas
+- gestionar memoria dinámica de forma segura
+- validar y convertir caracteres
+- realizar operaciones de copia y comparación de memoria
+- construir y gestionar listas enlazadas simples
+- imprimir datos a descriptores de archivo
+
+### Funciones implementadas
+
+#### Caracteres
 - `ft_isalpha`
 - `ft_isalnum`
 - `ft_isdigit`
 - `ft_isprint`
 - `ft_isascii`
-- `ft_strlen`
+- `ft_toupper`
+- `ft_tolower`
+
+#### Memoria
 - `ft_memset`
 - `ft_bzero`
 - `ft_memcpy`
 - `ft_memmove`
-- `ft_strlcpy`
-- `ft_strlcat`
-- `ft_toupper`
-- `ft_tolower`
+- `ft_memchr`
+- `ft_memcmp`
+- `ft_calloc`
+
+#### Cadenas
+- `ft_strlen`
 - `ft_strchr`
 - `ft_strrchr`
 - `ft_strncmp`
-- `ft_memchr`
-- `ft_memcmp`
 - `ft_strnstr`
-- `ft_atoi`
-- `ft_calloc`
 - `ft_strdup`
 - `ft_substr`
 - `ft_strjoin`
@@ -59,12 +93,14 @@ Libft es una biblioteca personal creada para recrear y comprender funciones bás
 - `ft_itoa`
 - `ft_strmapi`
 - `ft_striteri`
+
+#### Entrada / salida
 - `ft_putchar_fd`
 - `ft_putstr_fd`
 - `ft_putendl_fd`
 - `ft_putnbr_fd`
 
-### Listas enlazadas
+#### Listas enlazadas
 - `ft_lstnew`
 - `ft_lstadd_front`
 - `ft_lstsize`
@@ -75,14 +111,6 @@ Libft es una biblioteca personal creada para recrear y comprender funciones bás
 - `ft_lstiter`
 - `ft_lstmap`
 
-## Estructura de archivos
-- `libft.h` : prototipos de funciones y definición de `t_list`
-- `Makefile` : reglas de compilación para generar `libft.a`
-- Archivos `.c` : implementación de cada función
-
-## Notas
-- Esta librería es la base para futuros proyectos de 42 como `get_next_line`, `libftprintf`, `pipex`, `minishell`, entre otros.
-- El proyecto muestra la comprensión de punteros, manejo dinámico de memoria, manipulación de cadenas y estructuras enlazadas.
-
 ## Autor
+
 - `rtapiado` — `rtapiado@student.42madrid.com`

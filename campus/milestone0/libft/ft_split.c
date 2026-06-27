@@ -6,108 +6,70 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 16:32:37 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/06/27 16:33:41 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/06/27 16:49:34 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_char_in_str(char *s, char c)
+static int	count_words(const char *str, char c)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return (s);
-		s++;
-	}
-	if (c == '\0')
-		return (s);
-	return (NULL);
-}
+	int	i;
+	int	trigger;
 
-int	ft_count_words(char *str, char *sep)
-{
-	int	word;
-	int	count;
-
-	count = 0;
-	word = 0;
-	while (*str != '\0')
-	{
-		if (!ft_char_in_str(sep, *str) && !word)
-		{
-			word = 1;
-			count++;
-		}
-		else
-			if (ft_char_in_str(sep, *str))
-				word = 0;
-		str++;
-	}
-	return (count);
-}
-
-char	*ft_get_x_word_pointer(char *str, char *sep, int x)
-{
-	int		word;
-	int		count;
-
-	count = 0;
-	word = 0;
-	while (*str != '\0')
-	{
-		if (!ft_char_in_str(sep, *str) && !word)
-		{
-			word = 1;
-			count++;
-			if (count == x)
-				return (str);
-		}
-		else
-			if (ft_char_in_str(sep, *str))
-				word = 0;
-		str++;
-	}
-	return (NULL);
-}
-
-int	ft_get_x_word_length(char *word_start, char *sep)
-{
-	int		found_length;
-
-	found_length = 0;
-	if (!word_start)
-		return (0);
-	while (*word_start && !ft_char_in_str(sep, *word_start))
-	{
-		found_length++;
-		word_start++;
-	}
-	return (found_length);
-}
-
-char	**ft_split(char *str, char *charset)
-{
-	int		words;
-	int		i;
-	int		j;
-	char	**strs;
-	char	*word_ptr;
-
-	words = ft_count_words(str, charset);
-	strs = malloc(sizeof(char *) * words);
 	i = 0;
-	while (i < words)
+	trigger = 0;
+	while (*str)
 	{
-		word_ptr = ft_get_x_word_pointer(str, charset, i + 1);
-		strs[i] = malloc(ft_get_x_word_length(word_ptr, charset));
-		j = 0;
-		while (j < ft_get_x_word_length(word_ptr, charset))
+		if (*str != c && trigger == 0)
 		{
-			strs[i][j] = word_ptr[j];
-			j++;
+			trigger = 1;
+			i++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
+	}
+	return (i);
+}
+
+static char	*word_dup(const char *str, int start, int finish)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
+
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
+		return (NULL);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = -1;
 		}
 		i++;
 	}
-	return (strs);
+	split[j] = 0;
+	return (split);
 }

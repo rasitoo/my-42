@@ -1,0 +1,3 @@
+[submodule "campus/milestone1/push_swap"]
+	path = campus/milestone1/push_swap
+	url = https://github.com/dsotogc/42_push_swap.git

@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 22:29:46 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/09/27 15:00:07 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/09/28 01:39:29 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
+int		ft_putstr(char *s);
+int		ft_putnbr(int nb);
 
 #endif

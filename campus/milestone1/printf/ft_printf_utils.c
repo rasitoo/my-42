@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 14:48:26 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/09/28 19:24:21 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/09/28 20:45:24 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_putnbr(long l)
 	return (bytes);
 }
 
-int	ft_puthex(unsigned long l, int X)
+int	ft_puthex(unsigned long l, int uppercase)
 {
 	int		bytes;
 	char	c;
@@ -39,12 +39,12 @@ int	ft_puthex(unsigned long l, int X)
 
 	bytes = 0;
 	c = 0;
-	if (X)
+	if (uppercase)
 		hex = "0123456789ABCDEF";
 	else
 		hex = "0123456789abcdef";
 	if (l >= 16)
-		bytes += ft_puthex(l / 16, X);
+		bytes += ft_puthex(l / 16, uppercase);
 	c = hex[(l % 16)];
 	bytes += write(1, &c, 1);
 	return (bytes);

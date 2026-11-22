@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 13:47:06 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/11/20 14:51:02 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/11/22 13:24:23 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*res;
 	size_t	i;
@@ -63,6 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2 && s2[j])
 		res[i++] = s2[j++];
 	res[i] = '\0';
+	free(s1);
 	return (res);
 }
 

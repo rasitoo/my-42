@@ -12,28 +12,33 @@
 
 #include "get_next_line.h"
 
+static char	*clean_error(char *stash, char *buf)
+{
+	free(stash);
+	free(buf);
+	return (NULL);
+}
+
 static char	*read_and_stash(int fd, char *stash)
 {
 	ssize_t	bytes_read;
 	char	*buf;
 
-	bytes_read = 1;
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-		return (NULL);
-	while (!ft_strchr(stash, '\n') && bytes_read > 0)
+		return (clean_error(stash, NULL));
+	bytes_read = 1;
+	while (bytes_read > 0 && !ft_strchr(stash, '\n'))
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
+		if (bytes_read == -1)
+			return (clean_error(stash, buf));
 		if (bytes_read == 0)
 			break ;
-		if (bytes_read == -1)
-		{
-			free(buf);
-			free(stash);
-			return (NULL);
-		}
 		buf[bytes_read] = '\0';
 		stash = ft_strjoin(stash, buf);
+		if (!stash)
+			return (clean_error(NULL, buf));
 	}
 	free(buf);
 	return (stash);
@@ -77,12 +82,22 @@ char	*get_next_line(int fd)
 	static char	*stash;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free(stash);
+		stash = NULL;
 		return (NULL);
+	}
 	stash = read_and_stash(fd, stash);
 	if (!stash)
 		return (NULL);
 	line = extract_line(stash);
+	if (!line)
+	{
+		free(stash);
+		stash = NULL;
+		return (NULL);
+	}
 	stash = update_stash(stash);
 	return (line);
 }

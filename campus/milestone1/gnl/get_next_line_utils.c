@@ -52,7 +52,10 @@ char	*ft_strjoin(char *s1, char const *s2)
 		return (NULL);
 	res = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!res)
+	{
+		free(s1);
 		return (NULL);
+	}
 	i = 0;
 	while (s1 && s1[i])
 	{

@@ -82,8 +82,8 @@ En cumplimiento con las directrices de la versión 14.0 del currículo de 42 rel
   - Asistencia en la depuración guiada de casos borde en la gestión de índices de corte de cadenas y detección de dependencias en variables locales sin inicializar.
   - Creación de entornos de prueba automatizados con interceptación (*wrapping*) de llamadas a `malloc` y `free` para auditar la ausencia de fugas de memoria (*leaks*) bajo diferentes valores de `BUFFER_SIZE`.
 - **Partes del proyecto en las que se empleó:**
-  - En la condición del bucle de acumulación dentro de `read_and_stash`, asegurando la verificación sobre el acumulador estático y gestionando adecuadamente el corte limpio por fin de archivo (`bytes_read == 0`).
-  - En el refinamiento de la función `update_stash`, para garantizar la liberación inmediata de memoria estática cuando el salto de línea coincide exactamente con el final de la lectura, eliminando la persistencia de cadenas vacías residuales en llamadas prematuras o cierres de archivo.
+  - En la optimización de `read_and_stash`, evitando reservas y lecturas innecesarias cuando el acumulador estático `stash` ya contiene un `\n`, verificando la aparición del salto de línea directamente sobre el bloque recién leído `buf` y gestionando el corte limpio por fin de archivo (`bytes_read == 0`).
+  - En el refinamiento de la función `update_stash`, para garantizar la liberación inmediata de memoria estática cuando el salto de línea coincide exactamente con el final de la lectura, así como la limpieza segura de la línea extraída si falla la reserva del remanente.
 
 ---
 
@@ -94,10 +94,11 @@ En cumplimiento con las directrices de la versión 14.0 del currículo de 42 rel
 Para mantener cada función por debajo del límite estricto de 25 líneas de la Norma de 42 y asegurar una arquitectura limpia, la lógica se dividió en tres fases independientes:
 
 1. **`read_and_stash` (Lectura y Acumulación):**
+   - Comprueba primero si `stash` ya contiene un salto de línea (`\n`); de ser así, retorna `stash` directamente sin reservar memoria ni invocar `read` (cumpliendo la regla de leer lo menos posible).
    - Utiliza un buffer temporal asignado dinámicamente de tamaño `BUFFER_SIZE + 1`.
-   - Realiza llamadas sucesivas a `read` mientras el acumulador estático no contenga un salto de línea (`\n`) y queden bytes por leer (`bytes_read > 0`).
-   - Cada bloque leído se añade al acumulador `stash` mediante una versión optimizada de `ft_strjoin` que libera automáticamente el puntero anterior, evitando la necesidad de variables temporales adicionales y fugas intermedias.
-   - Si `read` devuelve error (`-1`), se libera inmediatamente tanto el buffer de lectura como el `stash` existente, retornando `NULL`.
+   - Realiza llamadas sucesivas a `read(fd, buf, BUFFER_SIZE)` mientras el último bloque leído `buf` no contenga un salto de línea (`\n`) y queden bytes por leer (`bytes_read > 0`).
+   - Cada bloque leído se añade al acumulador `stash` mediante una versión optimizada con aritmética de punteros de `ft_strjoin` que libera automáticamente el puntero anterior, evitando fugas intermedias y minimizando el coste en lecturas byte a byte (`BUFFER_SIZE = 1`).
+   - Si `read` devuelve error (`-1`), se libera inmediatamente tanto el buffer de lectura como el `stash` existente mediante `clean_error`, retornando `NULL`.
 
 2. **`extract_line` (Extracción de la Línea Actual):**
    - Recorre linealmente `stash` para localizar el primer `\n` o el terminador nulo `\0`.

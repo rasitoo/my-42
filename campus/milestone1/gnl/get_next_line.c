@@ -24,11 +24,14 @@ static char	*read_and_stash(int fd, char *stash)
 	ssize_t	bytes_read;
 	char	*buf;
 
-	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (BUFFER_SIZE <= 0 || ft_strchr(stash, '\n'))
+		return (stash);
+	bytes_read = BUFFER_SIZE;
+	buf = (char *)malloc(sizeof(char) * (bytes_read + 1));
 	if (!buf)
 		return (clean_error(stash, NULL));
-	bytes_read = 1;
-	while (bytes_read > 0 && !ft_strchr(stash, '\n'))
+	buf[0] = '\0';
+	while (bytes_read > 0 && !ft_strchr(buf, '\n'))
 	{
 		bytes_read = read(fd, buf, BUFFER_SIZE);
 		if (bytes_read == -1)
@@ -46,35 +49,35 @@ static char	*read_and_stash(int fd, char *stash)
 
 static char	*extract_line(char *stash)
 {
-	int		len;
+	size_t	len;
 
-	len = 0;
 	if (!stash || stash[0] == '\0')
 		return (NULL);
+	len = 0;
 	while (stash[len] != '\n' && stash[len] != '\0')
 		len++;
-	return (ft_substr(stash, 0, ++len));
+	if (stash[len] == '\n')
+		len++;
+	return (ft_substr(stash, 0, len));
 }
 
-static char	*update_stash(char *stash)
+static char	*update_stash(char *stash, char **line)
 {
-	char	*buf;
-	int		len;
-	int		n;
+	char	*new_stash;
+	size_t	len;
+	size_t	n;
 
-	buf = stash;
 	len = ft_strlen(stash);
 	n = 0;
 	while (stash[n] != '\n' && stash[n] != '\0')
 		n++;
 	if (!stash[n] || !stash[n + 1])
-	{
-		free (stash);
-		return (NULL);
-	}
-	stash = ft_substr(stash, n + 1, len - n - 1);
-	free (buf);
-	return (stash);
+		return (clean_error(stash, NULL));
+	new_stash = ft_substr(stash, n + 1, len - n - 1);
+	free(stash);
+	if (!new_stash)
+		*line = clean_error(*line, NULL);
+	return (new_stash);
 }
 
 char	*get_next_line(int fd)
@@ -82,12 +85,8 @@ char	*get_next_line(int fd)
 	static char	*stash;
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-	{
-		free(stash);
-		stash = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	}
 	stash = read_and_stash(fd, stash);
 	if (!stash)
 		return (NULL);
@@ -98,6 +97,6 @@ char	*get_next_line(int fd)
 		stash = NULL;
 		return (NULL);
 	}
-	stash = update_stash(stash);
+	stash = update_stash(stash, &line);
 	return (line);
 }

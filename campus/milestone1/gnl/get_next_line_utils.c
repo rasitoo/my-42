@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/20 13:47:06 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/11/22 13:24:23 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/11/23 18:41:30 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	idx;
+	const char	*ptr;
 
 	if (!s)
 		return (0);
-	idx = 0;
-	while (s[idx] != '\0')
-		idx++;
-	return (idx);
+	ptr = s;
+	while (*ptr)
+		ptr++;
+	return (ptr - s);
 }
 
 char	*ft_strchr(const char *s, int c)
@@ -45,8 +45,8 @@ char	*ft_strchr(const char *s, int c)
 char	*ft_strjoin(char *s1, char const *s2)
 {
 	char	*res;
-	size_t	i;
-	size_t	j;
+	char	*ptr;
+	char	*src;
 
 	if (!s1 && !s2)
 		return (NULL);
@@ -56,16 +56,15 @@ char	*ft_strjoin(char *s1, char const *s2)
 		free(s1);
 		return (NULL);
 	}
-	i = 0;
-	while (s1 && s1[i])
-	{
-		res[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2 && s2[j])
-		res[i++] = s2[j++];
-	res[i] = '\0';
+	ptr = res;
+	src = s1;
+	if (src)
+		while (*src)
+			*ptr++ = *src++;
+	if (s2)
+		while (*s2)
+			*ptr++ = *s2++;
+	*ptr = '\0';
 	free(s1);
 	return (res);
 }

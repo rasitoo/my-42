@@ -6,7 +6,7 @@
 /*   By: rtapiado <rtapiado@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/22 17:47:00 by rtapiado          #+#    #+#             */
-/*   Updated: 2026/11/22 17:47:00 by rtapiado         ###   ########.fr       */
+/*   Updated: 2026/11/23 18:55:03 by rtapiado         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ static void	read_fd(int fd, const char *source_name)
 	line = get_next_line(fd);
 	while (line)
 	{
-		printf("[%03d] %s", line_num, line);
-		free(line);
 		line = get_next_line(fd);
+		printf("%s", line);
 		line_num++;
 	}
 	printf("\n--- Fin de: %s (total: %d lineas) ---\n\n",
